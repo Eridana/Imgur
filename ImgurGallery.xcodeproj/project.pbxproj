@@ -13,6 +13,12 @@
 		3F1213DB2168B25F009152ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1213DA2168B25F009152ED /* Assets.xcassets */; };
 		3F1213DE2168B25F009152ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1213DC2168B25F009152ED /* LaunchScreen.storyboard */; };
 		3F1213E92168B25F009152ED /* ImgurGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1213E82168B25F009152ED /* ImgurGalleryTests.swift */; };
+		3F1213F42168B62C009152ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213F32168B62C009152ED /* Alamofire.framework */; };
+		3F1213F52168B62C009152ED /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213F32168B62C009152ED /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F1213F82168B63C009152ED /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213F72168B63C009152ED /* RxSwift.framework */; };
+		3F1213F92168B63C009152ED /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213F72168B63C009152ED /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F1213FB2168B64C009152ED /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213FA2168B64C009152ED /* SDWebImage.framework */; };
+		3F1213FC2168B64C009152ED /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1213FA2168B64C009152ED /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +31,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3F1213F62168B62C009152ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F1213F92168B63C009152ED /* RxSwift.framework in Embed Frameworks */,
+				3F1213FC2168B64C009152ED /* SDWebImage.framework in Embed Frameworks */,
+				3F1213F52168B62C009152ED /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3F1213D02168B257009152ED /* ImgurGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImgurGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1213D32168B257009152ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +58,9 @@
 		3F1213E42168B25F009152ED /* ImgurGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1213E82168B25F009152ED /* ImgurGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurGalleryTests.swift; sourceTree = "<group>"; };
 		3F1213EA2168B25F009152ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1213F32168B62C009152ED /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		3F1213F72168B63C009152ED /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		3F1213FA2168B64C009152ED /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1213F82168B63C009152ED /* RxSwift.framework in Frameworks */,
+				3F1213FB2168B64C009152ED /* SDWebImage.framework in Frameworks */,
+				3F1213F42168B62C009152ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +87,9 @@
 		3F1213C72168B257009152ED = {
 			isa = PBXGroup;
 			children = (
+				3F1213FA2168B64C009152ED /* SDWebImage.framework */,
+				3F1213F72168B63C009152ED /* RxSwift.framework */,
+				3F1213F32168B62C009152ED /* Alamofire.framework */,
 				3F1213D22168B257009152ED /* ImgurGallery */,
 				3F1213E72168B25F009152ED /* ImgurGalleryTests */,
 				3F1213D12168B257009152ED /* Products */,
@@ -106,6 +137,7 @@
 				3F1213CC2168B257009152ED /* Sources */,
 				3F1213CD2168B257009152ED /* Frameworks */,
 				3F1213CE2168B257009152ED /* Resources */,
+				3F1213F62168B62C009152ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +392,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9377R37M3Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImgurGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +414,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9377R37M3Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImgurGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
