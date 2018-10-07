@@ -2,7 +2,7 @@
 //  Settings.swift
 //  ImgurGallery
 //
-//  Created by Женя Михайлова on 07.10.2018.
+//  Created by Evgeniya Mikhailova on 07.10.2018.
 //  Copyright © 2018 Evgeniya Mikhailova. All rights reserved.
 //
 
@@ -12,6 +12,7 @@ extension Settings {
     internal static var settingsPlistName = "network_settings"
     internal static var baseUrlKey = "base_url"
     internal static var galleryUrlKey = "gallery_url"
+    internal static var imageUrlKey = "image_info_url"
     internal static var tokenKey = "token"
 }
 
@@ -29,6 +30,10 @@ class Settings {
     
     public var galleryUrl: String {
         return self.property(for: Settings.galleryUrlKey)
+    }
+    
+    public var imageInfoUrl: String {
+        return self.property(for: Settings.imageUrlKey)
     }
     
     public var token: String {

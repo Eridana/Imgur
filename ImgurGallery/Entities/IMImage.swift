@@ -2,7 +2,7 @@
 //  IMImage.swift
 //  ImgurGallery
 //
-//  Created by Женя Михайлова on 07.10.2018.
+//  Created by Evgeniya Mikhailova on 07.10.2018.
 //  Copyright © 2018 Evgeniya Mikhailova. All rights reserved.
 //
 

@@ -23,6 +23,11 @@
 		3F1590C0216A1D4600E0A2C2 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1590C2216A1D4600E0A2C2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1590C4216A1D4600E0A2C2 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F1590CE216A272700E0A2C2 /* GalleriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590CD216A272700E0A2C2 /* GalleriesService.swift */; };
+		3F1590D0216A276900E0A2C2 /* GalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590CF216A276900E0A2C2 /* GalleryModel.swift */; };
+		3F1590D2216A2B0D00E0A2C2 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590D1216A2B0D00E0A2C2 /* ImageModel.swift */; };
+		3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */; };
+		3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		3F1590CD216A272700E0A2C2 /* GalleriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleriesService.swift; sourceTree = "<group>"; };
+		3F1590CF216A276900E0A2C2 /* GalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryModel.swift; sourceTree = "<group>"; };
+		3F1590D1216A2B0D00E0A2C2 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMImageRequestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +124,13 @@
 		3F1213D22168B257009152ED /* ImgurGallery */ = {
 			isa = PBXGroup;
 			children = (
+				3F1590D3216A2C9600E0A2C2 /* Extensions */,
 				3F15909C2169FCFD00E0A2C2 /* Helpers */,
 				3F1590AA216A162D00E0A2C2 /* Entities */,
 				3F1590992169FA1400E0A2C2 /* Requests */,
+				3F1590CC216A266700E0A2C2 /* Services */,
+				3F1590CB216A265700E0A2C2 /* Models */,
+				3F1590C5216A20C600E0A2C2 /* UI */,
 				3F1213D32168B257009152ED /* AppDelegate.swift */,
 				3F1213D52168B257009152ED /* ViewController.swift */,
 				3F1213D72168B257009152ED /* Main.storyboard */,
@@ -142,6 +156,7 @@
 			children = (
 				3F15909A2169FA2700E0A2C2 /* ApiManager.swift */,
 				3F1590A1216A009B00E0A2C2 /* GalleryRequest.swift */,
+				3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -158,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				3F1590AB216A163800E0A2C2 /* IMGalleryRequestResult.swift */,
+				3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */,
 				3F1590AD216A165300E0A2C2 /* IMGallery.swift */,
 				3F1590AF216A166A00E0A2C2 /* IMImage.swift */,
 			);
@@ -172,6 +188,31 @@
 				3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F1590CB216A265700E0A2C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F1590CF216A276900E0A2C2 /* GalleryModel.swift */,
+				3F1590D1216A2B0D00E0A2C2 /* ImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F1590CC216A266700E0A2C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F1590CD216A272700E0A2C2 /* GalleriesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3F1590D3216A2C9600E0A2C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F1590D4216A2CA300E0A2C2 /* UIViewController+Xib.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1590D2216A2B0D00E0A2C2 /* ImageModel.swift in Sources */,
 				3F1590AE216A165300E0A2C2 /* IMGallery.swift in Sources */,
 				3F1590B0216A166A00E0A2C2 /* IMImage.swift in Sources */,
 				3F1590A2216A009B00E0A2C2 /* GalleryRequest.swift in Sources */,
 				3F1590AC216A163800E0A2C2 /* IMGalleryRequestResult.swift in Sources */,
 				3F1213D62168B257009152ED /* ViewController.swift in Sources */,
+				3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */,
+				3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */,
+				3F1590D0216A276900E0A2C2 /* GalleryModel.swift in Sources */,
 				3F15909B2169FA2700E0A2C2 /* ApiManager.swift in Sources */,
+				3F1590CE216A272700E0A2C2 /* GalleriesService.swift in Sources */,
 				3F1590A02169FD6E00E0A2C2 /* Settings.swift in Sources */,
 				3F1213D42168B257009152ED /* AppDelegate.swift in Sources */,
 			);

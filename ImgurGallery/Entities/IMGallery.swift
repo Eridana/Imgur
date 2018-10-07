@@ -14,6 +14,8 @@ class IMGallery: Codable {
     var galleryDescription: String?
     var isAlbum: Bool?
     var imagesCount: Int?
+    var coverImageId: String?
+    var coverImage: IMImage?
     var images: [IMImage]?
     
     private enum CodingKeys: String, CodingKey {
@@ -22,6 +24,7 @@ class IMGallery: Codable {
         case galleryDescription = "description"
         case isAlbum = "is_album"
         case imagesCount = "images_count"
+        case coverImageId = "cover"
         case images
     }
 }
