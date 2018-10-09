@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+extension CollectionViewCustomLayout {
+    static var defaultWidth: CGFloat = 170.0
+    static var defaultLineSpacing: CGFloat = 20.0
+    static var defaultInterSpacing: CGFloat = 10.0
+}
+
 class CollectionViewCustomLayout: UICollectionViewFlowLayout {
 
     required init?(coder aDecoder: NSCoder) {
@@ -22,9 +28,14 @@ class CollectionViewCustomLayout: UICollectionViewFlowLayout {
     }
     
     private func commonInit() {
-        self.itemSize = CGSize(width: 150.0, height: 150.0)
-        self.minimumLineSpacing = 20.0
-        self.minimumInteritemSpacing = 20.0
+        self.minimumLineSpacing = CollectionViewCustomLayout.defaultLineSpacing
+        self.minimumInteritemSpacing = CollectionViewCustomLayout.defaultInterSpacing
+        if let frameWidth = self.collectionView?.frame.size.width {
+            let width = (frameWidth - self.minimumInteritemSpacing * 2) / 2
+            self.itemSize = CGSize(width: width, height: width)
+        } else {
+            self.itemSize = CGSize(width: CollectionViewCustomLayout.defaultWidth, height: CollectionViewCustomLayout.defaultWidth)
+        }
     }
     
 }

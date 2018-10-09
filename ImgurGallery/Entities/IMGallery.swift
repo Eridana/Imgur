@@ -17,6 +17,8 @@ class IMGallery: Codable {
     var coverImageId: String?
     var coverImage: IMImage?
     var images: [IMImage]?
+    var link: String?
+    var contentType: String?
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -26,5 +28,7 @@ class IMGallery: Codable {
         case imagesCount = "images_count"
         case coverImageId = "cover"
         case images
+        case link
+        case contentType = "type"
     }
 }

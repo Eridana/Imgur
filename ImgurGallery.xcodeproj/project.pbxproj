@@ -18,9 +18,6 @@
 		3F1590AC216A163800E0A2C2 /* IMGalleryRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590AB216A163800E0A2C2 /* IMGalleryRequestResult.swift */; };
 		3F1590AE216A165300E0A2C2 /* IMGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590AD216A165300E0A2C2 /* IMGallery.swift */; };
 		3F1590B0216A166A00E0A2C2 /* IMImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590AF216A166A00E0A2C2 /* IMImage.swift */; };
-		3F1590C0216A1D4600E0A2C2 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F1590C2216A1D4600E0A2C2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F1590C4216A1D4600E0A2C2 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1590C8216A210B00E0A2C2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590C6216A210B00E0A2C2 /* MainViewController.swift */; };
 		3F1590C9216A210B00E0A2C2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1590C7216A210B00E0A2C2 /* MainViewController.xib */; };
 		3F1590CE216A272700E0A2C2 /* GalleriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590CD216A272700E0A2C2 /* GalleriesService.swift */; };
@@ -32,6 +29,13 @@
 		3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */; };
 		3F1590DD216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DC216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift */; };
 		3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */; };
+		7E79BBFA216B39C1009E9307 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; };
+		7E79BBFC216B39E6009E9307 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E79BBFE216B39E6009E9307 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E79BC00216B39E6009E9307 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */; };
+		7E9C5C1A216BC99400B7C762 /* String+ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C19216BC99400B7C762 /* String+ContentType.swift */; };
+		7E9C5C1C216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,15 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3F1213F62168B62C009152ED /* Embed Frameworks */ = {
+		7E79BC01216B39E7009E9307 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3F1590C0216A1D4600E0A2C2 /* SDWebImage.framework in Embed Frameworks */,
-				3F1590C2216A1D4600E0A2C2 /* Alamofire.framework in Embed Frameworks */,
-				3F1590C4216A1D4600E0A2C2 /* RxSwift.framework in Embed Frameworks */,
+				7E79BBFC216B39E6009E9307 /* SDWebImage.framework in Embed Frameworks */,
+				7E79BBFE216B39E6009E9307 /* Alamofire.framework in Embed Frameworks */,
+				7E79BC00216B39E6009E9307 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +94,9 @@
 		3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		3F1590DC216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCustomLayout.swift; sourceTree = "<group>"; };
 		3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMImageRequestResult.swift; sourceTree = "<group>"; };
+		7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageCachedLoader.swift; sourceTree = "<group>"; };
+		7E9C5C19216BC99400B7C762 /* String+ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ContentType.swift"; sourceTree = "<group>"; };
+		7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadingIndocator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E79BBFA216B39C1009E9307 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				3F15909F2169FD6E00E0A2C2 /* Settings.swift */,
+				7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -237,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				3F1590D4216A2CA300E0A2C2 /* UIViewController+Xib.swift */,
+				7E9C5C19216BC99400B7C762 /* String+ContentType.swift */,
+				7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,7 +262,7 @@
 				3F1213CC2168B257009152ED /* Sources */,
 				3F1213CD2168B257009152ED /* Frameworks */,
 				3F1213CE2168B257009152ED /* Resources */,
-				3F1213F62168B62C009152ED /* Embed Frameworks */,
+				7E79BC01216B39E7009E9307 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,11 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */,
 				3F1590D2216A2B0D00E0A2C2 /* ImageModel.swift in Sources */,
 				3F1590AE216A165300E0A2C2 /* IMGallery.swift in Sources */,
 				3F1590B0216A166A00E0A2C2 /* IMImage.swift in Sources */,
 				3F1590A2216A009B00E0A2C2 /* GalleryRequest.swift in Sources */,
 				3F1590AC216A163800E0A2C2 /* IMGalleryRequestResult.swift in Sources */,
+				7E9C5C1C216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift in Sources */,
 				3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */,
 				3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */,
 				3F1590D0216A276900E0A2C2 /* GalleryModel.swift in Sources */,
@@ -358,6 +371,7 @@
 				3F1590CE216A272700E0A2C2 /* GalleriesService.swift in Sources */,
 				3F1590D8216A365B00E0A2C2 /* GalleryCVC.swift in Sources */,
 				3F1590D5216A2CA300E0A2C2 /* UIViewController+Xib.swift in Sources */,
+				7E9C5C1A216BC99400B7C762 /* String+ContentType.swift in Sources */,
 				3F1590C8216A210B00E0A2C2 /* MainViewController.swift in Sources */,
 				3F1590A02169FD6E00E0A2C2 /* Settings.swift in Sources */,
 				3F1213D42168B257009152ED /* AppDelegate.swift in Sources */,
@@ -525,7 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emikhailova.ImgurGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -547,7 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emikhailova.ImgurGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
