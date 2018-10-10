@@ -46,6 +46,7 @@ class GalleryRequest {
             if let data = data as? Data {
                 do {
                     let decoded = try JSONDecoder().decode(IMGalleryRequestResult.self, from: data)
+                    
                     // request cover images info
                     guard let galleries = decoded.galleries else {
                         completion(nil)

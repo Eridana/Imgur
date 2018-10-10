@@ -30,8 +30,6 @@ class ApiManager {
     
     public func get(from endUrl: URL, params: [String: Any]?, completion: @escaping ((Any?) -> Void)) {
         
-        // URL(string: String(format: "%@%@", self.endpoint, urlString)) else {
-        
         guard let url = self.baseURL?.appendingPathComponent(endUrl.path) else {
             completion(nil)
             return

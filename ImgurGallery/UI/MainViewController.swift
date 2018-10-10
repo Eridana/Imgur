@@ -8,14 +8,16 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let service = GalleriesService()
-    internal var galleries: [GalleryModel]?
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    internal var model: GalleryViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.model = GalleryViewModel(delegate: self)
         self.setup()
     }
 
@@ -25,22 +27,29 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.service.galleries { (result) -> (Void) in
-            self.galleries = result?.filter({ (model) -> Bool in
-                (model.cover?.type ?? .unknown) != .video
-            })
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+        self.fetchData()
+    }
+    
+    private func fetchData() {
+        self.indicatorView.startAnimating()
+        self.model?.fetchGalleries()
     }
     
     private func setup() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionView.prefetchDataSource = self
         self.collectionView.collectionViewLayout = CollectionViewCustomLayout()
         self.collectionView.register(UINib(nibName: String(describing: GalleryCVC.self), bundle: nil), forCellWithReuseIdentifier: String(describing: GalleryCVC.self))
     }
+    
+    // MARK: - Controls
+    
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        let hot = sender.selectedSegmentIndex == 0
+        self.model?.switchType(to: hot)
+    }
+    
 
     // MARK: - Collection View
     
@@ -48,21 +57,28 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GalleryCVC.self), for: indexPath) as? GalleryCVC else {
             return UICollectionViewCell()
         }
-        let gallery = self.galleries?[indexPath.row]
-        //cell.setup(with: gallery)
+        
+        if isLoadingCell(for: indexPath) {
+            cell.setup(with: .none)
+        } else {
+            cell.setup(with: self.model?.gallery(at: indexPath.row))
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let gallery = self.galleries?[indexPath.row] {
-            print("row \(indexPath.row) gallery cover: \(gallery.cover?.image?.id ?? "nil")")
-            (cell as? GalleryCVC)?.setup(with: gallery)
-        }
-        
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.galleries?.count ?? 0
+        print("total count in controller = \(self.model?.totalCount ?? 0)")
+        return self.model?.totalCount ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            self.model?.fetchGalleries()
+        }
     }
     
     /*
@@ -95,4 +111,41 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
      */
     
     
+}
+
+extension MainViewController: GalleryViewModelDelegate {
+    
+    func fetchDidFail(with error: String?) {
+        self.indicatorView.stopAnimating()
+        print("Fetch did fail with error: \(error ?? "")")
+    }
+    
+    func fetchDidComplete(with newIndexPathsToReload: [IndexPath]?) {
+        self.indicatorView.stopAnimating()
+        self.indicatorView.isHidden = true
+        
+        guard let newIndexPathsToReload = newIndexPathsToReload else {
+            self.indicatorView.stopAnimating()
+            self.collectionView.isHidden = false
+            self.collectionView.reloadData()
+            return
+        }
+        let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+        self.collectionView.reloadItems(at: indexPathsToReload)
+    }
+}
+
+private extension MainViewController {
+    
+    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        let result = indexPath.row >= (self.model?.currentCount ?? 0)
+        print("isLoadingCell: \(result)")
+        return result
+    }
+    
+    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+        let indexPathsForVisibleItems = self.collectionView.indexPathsForVisibleItems
+        let indexPathsIntersection = Set(indexPathsForVisibleItems).intersection(indexPaths)
+        return Array(indexPathsIntersection)
+    }
 }

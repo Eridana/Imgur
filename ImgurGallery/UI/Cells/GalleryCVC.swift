@@ -16,6 +16,7 @@ class GalleryCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.imageView.showLoadingIndicator()
     }
     
     override func prepareForReuse() {
@@ -28,7 +29,6 @@ class GalleryCVC: UICollectionViewCell {
         self.model = model
         self.titleLabel.text = model?.title ?? model?.descr
         if let url = model?.coverUrl, let id = self.model?.coverId {
-            self.imageView.showLoadingIndicator()
             UIImageCachedLoader.sharedInstance.loadImageFor(id: id, url: url) { (image) in
                 DispatchQueue.main.async {
                     self.imageView.hideLoadingIndicator()

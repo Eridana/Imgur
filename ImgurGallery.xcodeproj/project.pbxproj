@@ -36,6 +36,7 @@
 		7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */; };
 		7E9C5C1A216BC99400B7C762 /* String+ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C19216BC99400B7C762 /* String+ContentType.swift */; };
 		7E9C5C1C216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */; };
+		7E9D7388216E3AD2003167E4 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D7387216E3AD2003167E4 /* GalleryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageCachedLoader.swift; sourceTree = "<group>"; };
 		7E9C5C19216BC99400B7C762 /* String+ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ContentType.swift"; sourceTree = "<group>"; };
 		7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadingIndocator.swift"; sourceTree = "<group>"; };
+		7E9D7387216E3AD2003167E4 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				3F1590992169FA1400E0A2C2 /* Requests */,
 				3F1590CC216A266700E0A2C2 /* Services */,
 				3F1590CB216A265700E0A2C2 /* Models */,
+				7E9D7386216E3AC7003167E4 /* ViewModels */,
 				3F1590C5216A20C600E0A2C2 /* UI */,
 				3F1213D32168B257009152ED /* AppDelegate.swift */,
 				3F1213DA2168B25F009152ED /* Assets.xcassets */,
@@ -250,6 +253,14 @@
 				7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E9D7386216E3AC7003167E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7E9D7387216E3AD2003167E4 /* GalleryViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */,
+				7E9D7388216E3AD2003167E4 /* GalleryViewModel.swift in Sources */,
 				3F1590D2216A2B0D00E0A2C2 /* ImageModel.swift in Sources */,
 				3F1590AE216A165300E0A2C2 /* IMGallery.swift in Sources */,
 				3F1590B0216A166A00E0A2C2 /* IMImage.swift in Sources */,
