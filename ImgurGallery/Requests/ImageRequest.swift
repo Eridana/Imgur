@@ -10,12 +10,20 @@ import Foundation
 
 class ImageRequest {
     
-    private static let url = Settings.sharedInstance.imageInfoUrl
+    private let urlPart = Settings.sharedInstance.imageInfoUrl
     
-    static func imageInfo(for id: String, completion: @escaping ((IMImage?) -> (Void))) {
+    private var baseURL: URL? {
+        return URL(string: self.urlPart)
+    }
     
-        let compoundUrl = self.url + "/\(id)"
-        ApiManager.sharedInstance.get(from: compoundUrl, params: nil) { (data) in
+    func imageInfo(for id: String, completion: @escaping ((IMImage?) -> (Void))) {
+    
+        guard let combinedUrl = self.baseURL?.appendingPathComponent(id) else {
+            completion(nil)
+            return
+        }
+        
+        ApiManager.sharedInstance.get(from: combinedUrl, params: nil) { (data) in
             if let data = data as? Data {
                 do {
                     let decoded = try JSONDecoder().decode(IMImageRequestResult.self, from: data)

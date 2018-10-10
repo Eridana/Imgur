@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,16 +31,56 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDF-I1-Wkz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6h-TQ-JyL">
+                            <rect key="frame" x="186" y="33.5" width="34" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O0k-fr-JzT">
+                            <rect key="frame" x="20" y="30" width="147" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="147" id="Wku-Yl-d5v"/>
+                            </constraints>
+                            <segments>
+                                <segment title="Hot"/>
+                                <segment title="Top"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="f12-K3-Jle"/>
+                            </connections>
+                        </segmentedControl>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-Lb-98k">
+                            <rect key="frame" x="232" y="28.5" width="51" height="31"/>
+                        </switch>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="S6h-TQ-JyL" firstAttribute="centerY" secondItem="O0k-fr-JzT" secondAttribute="centerY" id="6zf-CZ-bCL"/>
+                        <constraint firstItem="O0k-fr-JzT" firstAttribute="top" secondItem="JDF-I1-Wkz" secondAttribute="top" constant="30" id="Btb-54-lZd"/>
+                        <constraint firstItem="S6h-TQ-JyL" firstAttribute="leading" secondItem="O0k-fr-JzT" secondAttribute="trailing" constant="19" id="GXk-ta-ceP"/>
+                        <constraint firstItem="8cm-Lb-98k" firstAttribute="leading" secondItem="S6h-TQ-JyL" secondAttribute="trailing" constant="12" id="P0I-49-Ak2"/>
+                        <constraint firstAttribute="height" constant="70" id="TOw-Dr-opx"/>
+                        <constraint firstItem="O0k-fr-JzT" firstAttribute="leading" secondItem="JDF-I1-Wkz" secondAttribute="leading" constant="20" id="kcg-IH-s0k"/>
+                        <constraint firstItem="8cm-Lb-98k" firstAttribute="centerY" secondItem="S6h-TQ-JyL" secondAttribute="centerY" id="pc7-HS-OWU"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="D6n-HJ-Js6" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ruh-R5-PIO"/>
                 <constraint firstItem="D6n-HJ-Js6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WCK-wQ-uhW"/>
-                <constraint firstItem="D6n-HJ-Js6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="kEq-IU-vf3"/>
+                <constraint firstItem="JDF-I1-Wkz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bN5-e9-RIc"/>
+                <constraint firstItem="D6n-HJ-Js6" firstAttribute="top" secondItem="JDF-I1-Wkz" secondAttribute="bottom" id="caI-0O-KoX"/>
+                <constraint firstItem="JDF-I1-Wkz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gQR-G6-JbY"/>
+                <constraint firstItem="JDF-I1-Wkz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vDI-HP-Dj9"/>
                 <constraint firstItem="D6n-HJ-Js6" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xeq-JX-w1c"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="23.199999999999999" y="50.824587706146929"/>
         </view>
     </objects>
 </document>
