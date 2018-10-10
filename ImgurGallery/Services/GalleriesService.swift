@@ -12,9 +12,9 @@ class GalleriesService {
     
     private var request = GalleryRequest()
     
-    public func loadGalleries(for page: Int, type: GalleryType, _ completion: @escaping ([GalleryModel]?) -> (Void)) {
+    public func loadGalleries(for page: Int, type: GalleryType, useViral: Bool, _ completion: @escaping ([GalleryModel]?) -> (Void)) {
         DispatchQueue.global(qos: .background).async {
-            self.request.getGalleries(for: page, type: type) { (result) in
+            self.request.getGalleries(for: page, type: type, viral: useViral) { (result) in
                 let galleries = result?.map({ (gallery) in GalleryModel(gallery) })
                 completion(galleries)
             }

@@ -27,6 +27,7 @@ class GalleryViewModel {
     
     private var galleries = [GalleryModel]()
     private var galleryType: GalleryType = .hot
+    private var useViral = true
     private var currentPage: Int = 0
     // limit max count with this value, because api doesn't return total galleries amount :(
     private var total: Int = 2000
@@ -38,13 +39,13 @@ class GalleryViewModel {
     }
     
     public func switchType(to hot: Bool) {
-        self.galleries.removeAll()
         self.galleryType = hot ? .hot : .top
-        self.currentPage = 0
+        self.reload()
     }
     
-    public func useViral(_ use: Bool) {
-        
+    public func changeViral(_ useViral: Bool) {
+        self.useViral = useViral
+        self.reload()
     }
     
     public func gallery(at index: Int) -> GalleryModel? {
@@ -59,7 +60,7 @@ class GalleryViewModel {
         
         isFetchInProgress = true
         
-        self.service.loadGalleries(for: self.currentPage, type: self.galleryType, { (result) -> (Void) in
+        self.service.loadGalleries(for: self.currentPage, type: self.galleryType, useViral: self.useViral, { (result) -> (Void) in
             if let result = result {
                 DispatchQueue.main.async {
                     
@@ -98,7 +99,9 @@ class GalleryViewModel {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
-    
-    
-    
+    private func reload() {
+        self.galleries.removeAll()
+        self.currentPage = 0
+        self.fetchGalleries()
+    }
 }

@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     private func fetchData() {
-        self.indicatorView.startAnimating()
+        self.showIndicator()
         self.model?.fetchGalleries()
     }
     
@@ -43,13 +43,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.register(UINib(nibName: String(describing: GalleryCVC.self), bundle: nil), forCellWithReuseIdentifier: String(describing: GalleryCVC.self))
     }
     
+    func showIndicator() {
+        self.indicatorView.isHidden = false
+        self.indicatorView.startAnimating()
+    }
+    
+    func hideIndicator() {
+        self.indicatorView.isHidden = true
+        self.indicatorView.stopAnimating()
+    }
+    
     // MARK: - Controls
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        self.collectionView.isHidden = true
+        self.showIndicator()
         let hot = sender.selectedSegmentIndex == 0
         self.model?.switchType(to: hot)
+        self.collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: false)
     }
     
+    @IBAction func showViralChanged(_ sender: UISwitch) {
+        self.collectionView.isHidden = true
+        self.showIndicator()
+        self.model?.changeViral(sender.isOn)
+    }
 
     // MARK: - Collection View
     
@@ -116,13 +134,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 extension MainViewController: GalleryViewModelDelegate {
     
     func fetchDidFail(with error: String?) {
-        self.indicatorView.stopAnimating()
+        self.hideIndicator()
         print("Fetch did fail with error: \(error ?? "")")
     }
     
     func fetchDidComplete(with newIndexPathsToReload: [IndexPath]?) {
-        self.indicatorView.stopAnimating()
-        self.indicatorView.isHidden = true
+        self.hideIndicator()
         
         guard let newIndexPathsToReload = newIndexPathsToReload else {
             self.indicatorView.stopAnimating()

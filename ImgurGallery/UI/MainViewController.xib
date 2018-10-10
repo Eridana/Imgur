@@ -56,6 +56,9 @@
                         </segmentedControl>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-Lb-98k">
                             <rect key="frame" x="232" y="28.5" width="51" height="31"/>
+                            <connections>
+                                <action selector="showViralChanged:" destination="-1" eventType="valueChanged" id="F3o-ES-VXr"/>
+                            </connections>
                         </switch>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

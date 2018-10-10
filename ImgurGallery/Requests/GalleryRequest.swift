@@ -22,9 +22,9 @@ class GalleryRequest {
         return URL(string: self.urlPart)
     }
     
-    func getGalleries(for page: Int, type: GalleryType, _ completion: @escaping (([IMGallery]?) -> Void)) {
+    func getGalleries(for page: Int, type: GalleryType, viral: Bool, _ completion: @escaping (([IMGallery]?) -> Void)) {
         
-        let params: [String: Any]? = ["showViral" : true, "page" : page]
+        let params: [String: Any]? = ["showViral" : viral, "page" : page]
         
         var combinedUrl = self.baseURL
         
