@@ -29,6 +29,9 @@
 		3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */; };
 		3F1590DD216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DC216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift */; };
 		3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */; };
+		7E475C96216F21E5009BEE2D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E475C94216F21E5009BEE2D /* AboutViewController.swift */; };
+		7E475C97216F21E5009BEE2D /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E475C95216F21E5009BEE2D /* AboutViewController.xib */; };
+		7E475C99216F2812009BEE2D /* InfoDataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E475C98216F2812009BEE2D /* InfoDataReader.swift */; };
 		7E79BBFC216B39E6009E9307 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E79BBFE216B39E6009E9307 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E79BC00216B39E6009E9307 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +100,9 @@
 		3F1590DA216A466D00E0A2C2 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		3F1590DC216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCustomLayout.swift; sourceTree = "<group>"; };
 		3F1590DE216A522600E0A2C2 /* IMImageRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMImageRequestResult.swift; sourceTree = "<group>"; };
+		7E475C94216F21E5009BEE2D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7E475C95216F21E5009BEE2D /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		7E475C98216F2812009BEE2D /* InfoDataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDataReader.swift; sourceTree = "<group>"; };
 		7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageCachedLoader.swift; sourceTree = "<group>"; };
 		7E9C5C19216BC99400B7C762 /* String+ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ContentType.swift"; sourceTree = "<group>"; };
 		7E9C5C1B216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadingIndocator.swift"; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			children = (
 				3F15909F2169FD6E00E0A2C2 /* Settings.swift */,
 				7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */,
+				7E475C98216F2812009BEE2D /* InfoDataReader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 				3F1590DC216A4EDD00E0A2C2 /* CollectionViewCustomLayout.swift */,
 				3F1590C6216A210B00E0A2C2 /* MainViewController.swift */,
 				3F1590C7216A210B00E0A2C2 /* MainViewController.xib */,
+				7E475C94216F21E5009BEE2D /* AboutViewController.swift */,
+				7E475C95216F21E5009BEE2D /* AboutViewController.xib */,
 				3F1590CA216A211B00E0A2C2 /* Cells */,
 			);
 			path = UI;
@@ -353,6 +362,7 @@
 				3F1213DB2168B25F009152ED /* Assets.xcassets in Resources */,
 				3F1590D9216A365B00E0A2C2 /* GalleryCVC.xib in Resources */,
 				3F1590C9216A210B00E0A2C2 /* MainViewController.xib in Resources */,
+				7E475C97216F21E5009BEE2D /* AboutViewController.xib in Resources */,
 				3F1590A7216A129B00E0A2C2 /* network_settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,11 +384,13 @@
 				7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */,
 				7E9D7388216E3AD2003167E4 /* GalleryViewModel.swift in Sources */,
 				3F1590D2216A2B0D00E0A2C2 /* ImageModel.swift in Sources */,
+				7E475C96216F21E5009BEE2D /* AboutViewController.swift in Sources */,
 				3F1590AE216A165300E0A2C2 /* IMGallery.swift in Sources */,
 				3F1590B0216A166A00E0A2C2 /* IMImage.swift in Sources */,
 				3F1590A2216A009B00E0A2C2 /* GalleryRequest.swift in Sources */,
 				3F1590AC216A163800E0A2C2 /* IMGalleryRequestResult.swift in Sources */,
 				7E9C5C1C216BCBDD00B7C762 /* UIImageView+LoadingIndocator.swift in Sources */,
+				7E475C99216F2812009BEE2D /* InfoDataReader.swift in Sources */,
 				3F1590DB216A466D00E0A2C2 /* ImageRequest.swift in Sources */,
 				3F1590DF216A522600E0A2C2 /* IMImageRequestResult.swift in Sources */,
 				3F1590D0216A276900E0A2C2 /* GalleryModel.swift in Sources */,
@@ -549,6 +561,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ImgurGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,6 +584,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ImgurGallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

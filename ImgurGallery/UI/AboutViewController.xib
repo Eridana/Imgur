@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="ImgurGallery" customModuleProvider="target">
+            <connections>
+                <outlet property="emailButton" destination="uU1-8N-s5e" id="SDF-En-ABp"/>
+                <outlet property="infoLabel" destination="f1A-ao-Afs" id="yrX-id-jhe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGF-3t-x3K">
+                    <rect key="frame" x="16" y="80" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1A-ao-Afs">
+                    <rect key="frame" x="185.5" y="293" width="4.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uU1-8N-s5e">
+                    <rect key="frame" x="172.5" y="366" width="30" height="30"/>
+                    <state key="normal" title=" "/>
+                    <connections>
+                        <action selector="sendEmail:" destination="-1" eventType="touchUpInside" id="A2w-jz-ymu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE2-OP-8RY">
+                    <rect key="frame" x="24" y="31" width="34" height="30"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="GUM-7I-eCP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uU1-8N-s5e" firstAttribute="top" secondItem="f1A-ao-Afs" secondAttribute="bottom" constant="52" id="FND-ng-Yb5"/>
+                <constraint firstItem="lGF-3t-x3K" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ltq-bU-ZEw"/>
+                <constraint firstItem="zE2-OP-8RY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="11" id="M3M-DU-DWX"/>
+                <constraint firstItem="uU1-8N-s5e" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="N63-UX-GxH"/>
+                <constraint firstItem="lGF-3t-x3K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="QJe-mc-EoP"/>
+                <constraint firstItem="zE2-OP-8RY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="fE0-IS-66G"/>
+                <constraint firstItem="f1A-ao-Afs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fdw-Jq-nM9"/>
+                <constraint firstItem="lGF-3t-x3K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jEH-4q-GFS"/>
+                <constraint firstItem="f1A-ao-Afs" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-40" id="qeN-Y2-oso"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+</document>

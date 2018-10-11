@@ -53,7 +53,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.indicatorView.stopAnimating()
     }
     
-    // MARK: - Controls
+    // MARK: - Events
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         self.collectionView.isHidden = true
@@ -69,6 +69,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.model?.changeViral(sender.isOn)
     }
 
+    @IBAction func aboutTapped(_ sender: Any) {
+        let aboutController = AboutViewController.instantiateFromNib()
+        self.present(aboutController, animated: false, completion: nil)
+    }
+    
     // MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

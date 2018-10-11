@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let controller = MainViewController.instantiateFromNib()
-        self.window?.rootViewController = controller
+        self.window?.rootViewController = MainViewController.instantiateFromNib()
         self.window?.makeKeyAndVisible()
         return true
     }
