@@ -85,11 +85,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("total count in controller = \(self.model?.totalCount ?? 0)")
         return self.model?.totalCount ?? 0
     }
     
@@ -97,38 +96,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if indexPaths.contains(where: isLoadingCell) {
             self.model?.fetchGalleries()
         }
-    }
-    
-    /*
-    
-     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         let handler = self.handlers[indexPath.row]
-         let height = self.heightFor(handler: handler)
-         let width = self.widthFor(handler: handler)
-         return CGSize(width: width, height: height);
-     }
-     
-     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-         return 58.0
-     }
-     
-     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-         var sliderWidth:CGFloat = 599.0
-         let width = self.screenBounds.width
-         if UIDevice.current.userInterfaceIdiom == .phone {
-            return UIEdgeInsetsMake(0, 20, 0, 20)
-         } else {
-            if UIDevice.current.orientation.isPortrait {
-                sliderWidth = 499
-                return UIEdgeInsetsMake(0, (width - sliderWidth) / 2, 0, (width - sliderWidth) / 2)
-            }
-         }
-         return UIEdgeInsetsMake(0, (width - sliderWidth) / 2, 0, (width - sliderWidth) / 2)
-     }
-     
-     */
-    
-    
+    }    
 }
 
 extension MainViewController: GalleryViewModelDelegate {
@@ -156,7 +124,6 @@ private extension MainViewController {
     
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
         let result = indexPath.row >= (self.model?.currentCount ?? 0)
-        print("isLoadingCell: \(result)")
         return result
     }
     

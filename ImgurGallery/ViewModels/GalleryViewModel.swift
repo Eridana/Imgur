@@ -65,9 +65,9 @@ class GalleryViewModel {
                 DispatchQueue.main.async {
                     
                     self.currentPage += 1
-                    print("self.currentPage")
                     self.isFetchInProgress = false
                     
+                    // hide video galleries for now
                     let resultFiltered = result.filter({ (model) -> Bool in
                         (model.cover?.type ?? .unknown) != .video
                     })
@@ -76,10 +76,8 @@ class GalleryViewModel {
                     
                     if self.currentPage > 1 {
                         let indexPathsToReload = self.calculateIndexPathsToReload(from: result)
-                        print("indexPathsToReload count = \(indexPathsToReload.count)")
                         self.delegate?.fetchDidComplete(with: indexPathsToReload)
                     } else {
-                        print("fetchDidComplete(with: .none)")
                         self.delegate?.fetchDidComplete(with: .none)
                     }
                 }
