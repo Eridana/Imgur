@@ -39,7 +39,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.prefetchDataSource = self
-        self.collectionView.collectionViewLayout = CollectionViewCustomLayout()
+        let layout = CollectionViewCustomLayout()
+        layout.update(for: self.collectionView.bounds)
+        self.collectionView.collectionViewLayout = layout
         self.collectionView.register(UINib(nibName: String(describing: GalleryCVC.self), bundle: nil), forCellWithReuseIdentifier: String(describing: GalleryCVC.self))
     }
     
@@ -83,14 +85,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if isLoadingCell(for: indexPath) {
             cell.setup(with: .none)
-        } else {
-            cell.setup(with: self.model?.gallery(at: indexPath.row))
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        if !isLoadingCell(for: indexPath) {
+            (cell as? GalleryCVC)?.setup(with: self.model?.gallery(at: indexPath.row))
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
