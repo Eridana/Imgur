@@ -1,9 +1,0 @@
-[submodule "Carthage/Checkouts/Alamofire"]
-	path = Carthage/Checkouts/Alamofire
-	url = https://github.com/Alamofire/Alamofire.git
-[submodule "Carthage/Checkouts/RxSwift"]
-	path = Carthage/Checkouts/RxSwift
-	url = https://github.com/ReactiveX/RxSwift.git
-[submodule "Carthage/Checkouts/SDWebImage"]
-	path = Carthage/Checkouts/SDWebImage
-	url = https://github.com/rs/SDWebImage.git

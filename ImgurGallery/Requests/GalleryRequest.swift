@@ -15,27 +15,38 @@ enum GalleryType {
 
 class GalleryRequest {
     
-    private static let url = Settings.sharedInstance.galleryUrl
+    private let urlPart = Settings.sharedInstance.galleryUrl
+    private let imageRequest = ImageRequest()
     
-    static func getGalleries(with type: GalleryType, completion: @escaping (([IMGallery]?) -> Void)) {
+    private var baseURL: URL? {
+        return URL(string: self.urlPart)
+    }
+    
+    func getGalleries(for page: Int, type: GalleryType, viral: Bool, _ completion: @escaping (([IMGallery]?) -> Void)) {
         
-        let params: [String: Any]? = ["showViral" : true]
+        let params: [String: Any]? = ["showViral" : viral, "page" : page]
         
-        var combinedUrl = self.url
+        var combinedUrl = self.baseURL
         
         switch type {
         case .hot:
-            combinedUrl.append("/hot")
+            combinedUrl = combinedUrl?.appendingPathComponent("hot")
             break
         case .top:
-            combinedUrl.append("/top")
+            combinedUrl = combinedUrl?.appendingPathComponent("top")
             break
         }
         
-        ApiManager.sharedInstance.get(from: combinedUrl, params: params) { (data) in
+        guard let resultURL = combinedUrl else {
+            completion(nil)
+            return
+        }
+        
+        ApiManager.sharedInstance.get(from: resultURL, params: params) { (data) in
             if let data = data as? Data {
                 do {
                     let decoded = try JSONDecoder().decode(IMGalleryRequestResult.self, from: data)
+                    
                     // request cover images info
                     guard let galleries = decoded.galleries else {
                         completion(nil)
@@ -46,7 +57,7 @@ class GalleryRequest {
                     for gallery in galleries {
                         if let coverId = gallery.coverImageId {
                             dispatchGroup.enter()
-                            ImageRequest.imageInfo(for: coverId, completion: { (cover) -> (Void) in
+                            self.imageRequest.imageInfo(for: coverId, completion: { (cover) -> (Void) in
                                 gallery.coverImage = cover
                                 dispatchGroup.leave()
                             })

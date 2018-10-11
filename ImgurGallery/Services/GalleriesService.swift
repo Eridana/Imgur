@@ -10,18 +10,14 @@ import Foundation
 
 class GalleriesService {
     
-    public func galleries(_ completion: @escaping ([GalleryModel]?) -> (Void)) {
+    private var request = GalleryRequest()
+    
+    public func loadGalleries(for page: Int, type: GalleryType, useViral: Bool, _ completion: @escaping ([GalleryModel]?) -> (Void)) {
         DispatchQueue.global(qos: .background).async {
-            GalleryRequest.getGalleries(with: .hot) { (result) in
-                guard let result = result else {
-                    print("No galleries")
-                    completion(nil)
-                    return
-                }
-                completion(result.map({ (gallery) in
-                    GalleryModel(gallery)
-                }))
+            self.request.getGalleries(for: page, type: type, viral: useViral) { (result) in
+                let galleries = result?.map({ (gallery) in GalleryModel(gallery) })
+                completion(galleries)
             }
         }
-    }    
+    }
 }

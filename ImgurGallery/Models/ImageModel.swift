@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ImageType: String {
+enum ContentType: String {
     case image
     case gif
     case video
@@ -17,35 +17,24 @@ enum ImageType: String {
 
 class ImageModel {
     
+    public private(set) var id: String?
     public private(set) var title: String?
     public private(set) var descr: String?
     public private(set) var url: URL?
     public private(set) var animated: Bool = false
-    public private(set) var type: ImageType = .unknown
+    public private(set) var type: ContentType?
     
     internal var image: IMImage?
     
     init(_ image: IMImage) {
         self.image = image
+        self.id = image.id
         self.title = image.title
         self.descr = image.imageDescription
         self.animated = image.animated ?? false
         if let link = image.link {
             self.url = URL(string: link)
         }
-        self.setupType()
-    }
-    
-    private func setupType() {
-        guard let basicType = self.image?.contentType else {
-            return
-        }
-        if basicType.contains("gif") {
-            self.type = .gif
-        } else if basicType.contains("mp4") {
-            self.type = .video
-        } else if basicType.contains("jpeg") || basicType.contains("png") {
-            self.type = .image
-        }
+        self.type = image.contentType?.contentType()
     }
 }
