@@ -24,6 +24,7 @@ public class UIImageCachedLoader {
     public func loadImageFor(id: String, url: URL, _ completion: @escaping ((UIImage?) -> Void)) {
         DispatchQueue.global(qos: .background).async {
                 if let cachedVersion = self.cache?.object(forKey: id as NSString) {
+                    print("cachedVersion loaded for \(id)")
                 // use the cached version
                 completion(cachedVersion)
             } else {

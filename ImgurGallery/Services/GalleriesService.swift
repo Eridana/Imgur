@@ -15,7 +15,10 @@ class GalleriesService {
     
     public func loadGalleries(for page: Int, type: GalleryType, useViral: Bool, _ completion: @escaping ([GalleryModel]?) -> (Void)) {
         DispatchQueue.global(qos: .background).async {
-            self.request.getGalleries(for: page, type: type, viral: useViral) { (result) in
+            
+            let params = [GalleryRequest.HotParamKey: type == .hot, GalleryRequest.ViralParamKey : useViral]
+            
+            self.request.getGalleries(for: page, parameters: params) { (result) in
                 
                 // request cover images info
                 let dispatchGroup = DispatchGroup()
