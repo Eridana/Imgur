@@ -36,11 +36,9 @@
 		7E4E55DF21746B9700E082B5 /* GalleryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4E55DD21746B9700E082B5 /* GalleryTVC.xib */; };
 		7E79BBFC216B39E6009E9307 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E79BBFE216B39E6009E9307 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7E79BC00216B39E6009E9307 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E9C5C18216BC50200B7C762 /* UIImageCachedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C17216BC50200B7C762 /* UIImageCachedLoader.swift */; };
 		7E9C5C1A216BC99400B7C762 /* String+ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C5C19216BC99400B7C762 /* String+ContentType.swift */; };
 		7E9D7388216E3AD2003167E4 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D7387216E3AD2003167E4 /* GalleryViewModel.swift */; };
-		7E9D7389216F20D2003167E4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590B9216A1D1100E0A2C2 /* RxSwift.framework */; };
 		7E9D738A216F20D2003167E4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BB216A1D2000E0A2C2 /* Alamofire.framework */; };
 		7E9D738B216F20D2003167E4 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1590BD216A1D2C00E0A2C2 /* SDWebImage.framework */; };
 		7EF2C2C5217081C80029F164 /* StaggeredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF2C2C4217081C80029F164 /* StaggeredLayout.swift */; };
@@ -65,7 +63,6 @@
 			files = (
 				7E79BBFC216B39E6009E9307 /* SDWebImage.framework in Embed Frameworks */,
 				7E79BBFE216B39E6009E9307 /* Alamofire.framework in Embed Frameworks */,
-				7E79BC00216B39E6009E9307 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E9D7389216F20D2003167E4 /* RxSwift.framework in Frameworks */,
 				7E9D738A216F20D2003167E4 /* Alamofire.framework in Frameworks */,
 				7E9D738B216F20D2003167E4 /* SDWebImage.framework in Frameworks */,
 			);
