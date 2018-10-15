@@ -129,12 +129,14 @@ class MainViewController: UIViewController {
             if self.showTable {
                 self.showTable = false
                 self.collectionView.isHidden = false
+                self.tableView.isHidden = true
                 self.collectionView.reloadData()
             }            
         } else {
             if !self.showTable {
                 self.showTable = true
                 self.tableView.isHidden = false
+                self.collectionView.isHidden = true
                 self.tableView.reloadData()
             }
         }
