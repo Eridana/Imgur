@@ -39,7 +39,7 @@ class ApiManager {
         
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: self.headers).responseJSON { (response) in
             print(response.request ?? "No request in response")
-            print(response.result.debugDescription)
+            //print(response.result.debugDescription)
             completion(response.data)
         }
     }

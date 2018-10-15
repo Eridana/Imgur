@@ -48,8 +48,11 @@ class GalleryViewModel {
         self.reload()
     }
     
-    public func gallery(at index: Int) -> GalleryModel? {
-        return self.galleries[index]
+    public func gallery(at indexPath: IndexPath) -> GalleryModel? {
+        if indexPath.row >= self.galleries.count {
+            return nil
+        }
+        return self.galleries[indexPath.row]
     }
     
     public func fetchGalleries() {

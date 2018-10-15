@@ -19,6 +19,8 @@ class IMGallery: Codable {
     var images: [IMImage]?
     var link: String?
     var contentType: String?
+    var coverWidth: Double?
+    var coverHeight: Double?
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -30,5 +32,7 @@ class IMGallery: Codable {
         case images
         case link
         case contentType = "type"
+        case coverWidth = "cover_width"
+        case coverHeight = "cover_height"
     }
 }

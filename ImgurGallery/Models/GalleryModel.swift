@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class GalleryModel {
     
@@ -19,6 +20,7 @@ class GalleryModel {
     public private(set) var cover: ImageModel?    
     public private(set) var type: ContentType?
     public private(set) var url: URL?
+    public private(set) var imageSize = CGSize(width: 0, height: 0)
     
     public var coverUrl: URL? {
         if self.isAlbum {
@@ -51,5 +53,6 @@ class GalleryModel {
             self.cover = ImageModel(coverImage)
         }
         self.images = gallery.images?.map({ (image) in ImageModel(image) })
+        self.imageSize = CGSize(width: gallery.coverWidth ?? 0, height: gallery.coverHeight ?? 0)
     }    
 }
