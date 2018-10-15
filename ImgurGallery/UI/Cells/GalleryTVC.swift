@@ -1,16 +1,16 @@
 //
-//  GalleryCVC.swift
+//  GalleryTVC.swift
 //  ImgurGallery
 //
-//  Created by Женя Михайлова on 07.10.2018.
+//  Created by Evgeniia Mikhailova on 15.10.18.
 //  Copyright © 2018 Evgeniya Mikhailova. All rights reserved.
 //
 
 import UIKit
 
-class GalleryCVC: UICollectionViewCell {
+class GalleryTVC: UITableViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var galleryImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     internal var model: GalleryModel?
@@ -20,12 +20,8 @@ class GalleryCVC: UICollectionViewCell {
         self.indicator.startAnimating()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     override func prepareForReuse() {
-        self.imageView.image = nil
+        self.galleryImageView.image = nil
         self.model = nil
         self.titleLabel.text = nil
     }
@@ -38,7 +34,7 @@ class GalleryCVC: UICollectionViewCell {
                 DispatchQueue.main.async {
                     self.indicator.stopAnimating()
                     self.indicator.isHidden = true
-                    self.imageView.image = image
+                    self.galleryImageView.image = image
                 }
             }
         }
